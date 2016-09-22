@@ -1,5 +1,13 @@
 # My Odoo notes.
 
+* self.env: stores an execution environment.
+
+* self.env.cr: is a database cursor.
+
+* self.env.user: is the user executing the action.
+
+* self.env.context: is the context, which is a python dictionary containing various information such as the language of the user, his configured time zone, and other specific keys that can be set at run time by the actions of the user interface.
+
 * self.env.in_onchange(): returns True if the current context of
 execution is an onchange method.
 
