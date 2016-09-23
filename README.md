@@ -23,3 +23,10 @@ the database.
 * @api.multi: Is a decorator used on methods. This decorator tells the RPC layer to initialize self using the record IDs supplied in the RPC argument ids. In such methods, self is a recordset that can refer to an arbitrary number of database records.
 
 * @api.model: Is a decorator used on methods. Is used on methods for which only the model is important, not the contents of the recordset.
+
+* UserError: Is a exception available in openerp.exceptions. A UserError will display an error message in the user interface.
+
+Sources:
+--------
+
+- Book Odoo Development Cookbook.
