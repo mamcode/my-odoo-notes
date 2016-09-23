@@ -29,4 +29,4 @@ the database.
 Sources:
 --------
 
-- Book Odoo Development Cookbook.
+- [Book Odoo Development Cookbook.](https://www.packtpub.com/big-data-and-business-intelligence/odoo-development-cookbook)
