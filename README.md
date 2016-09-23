@@ -26,6 +26,8 @@ the database.
 
 * UserError: Is a exception available in openerp.exceptions. A UserError will display an error message in the user interface.
 
+* ValidationError: Is a exception available in openerp.exceptions. Is raised when a python constraint on a field is not respected.
+
 Sources:
 --------
 
