@@ -28,7 +28,15 @@ the database.
 
 * ValidationError: Is a exception available in openerp.exceptions. Is raised when a python constraint on a field is not respected.
 
-Sources:
---------
+* openerp.fields.Date.context_today(): Get the current date formatted as a string expected by create().
+
+* openerp.fields.Date.to_string(): Converts a python datetime.date object to the expected format.
+
+* openerp.fields.Datetime.to_string(): Converts a python datetime.datetime object to the expected format.
+
+* onchange methods are not called by create(), because they are called by the web client during the initial edition of the record. Some of these methods compute default values for fields related to a given field. When creating records by hand you have to do the work yourself, either by providing explicit values or by calling the onchange methods.
+
+Sources
+-------
 
 - [Book Odoo Development Cookbook.](https://www.packtpub.com/big-data-and-business-intelligence/odoo-development-cookbook)
