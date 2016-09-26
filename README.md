@@ -41,6 +41,7 @@ the database.
 * partner.child_ids |= contacts: The operator |= computes the union of te current contacts of the partner and the new contacts.
 
 * format when writing relational fields:
+
 | Tuple | Effect |
 | ------- | -------- |
 | (0, 0, dict_val) | This creates a new record that will be related to the main record. |
