@@ -76,6 +76,28 @@ Summary table of the most useful python operators that can be used on recordsets
 
 * The sorted() method will sort the records in a recordset. Called without arguments, the_order attribute of the model will be used. Otherwise, a function can be passed to compute a comparison key in the same fashion as the Python built-in sorted(sequence, key) function. The reverse keyword argument is also supported.
 
+* Three options for filter records of a recordset:
+
+```python
+@api.model
+def partners_with_email(self, partners):
+    def predicate(partner):
+        if partner.email:
+           return True
+        return False
+    return partners.filter(predicate)
+```
+
+```python
+@api.model
+def partners_with_email(self, partners):
+    return partners.filter(lambda p: p.email)
+```
+
+```python
+partners.filter('email')
+```
+
 Sources
 -------
 
