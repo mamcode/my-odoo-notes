@@ -52,6 +52,29 @@ the database.
 | (5, ) | This removes all the related records, equivalent to calling (3, id) for each related id. |
 | (6, 0, id_list) | This creates a relation between the record being updated and the existing record, whose IDs are in the Python list id_list. |
 
+* If for some reason you find yourself writing raw SQL queries to find record IDs, be sure to use self.env['record.model'].search([('id', 'in', tuple(ids)).ids after retrieving the IDs to make sure that security rules are applied. This is especially important in multicompany Odoo instances where record rules are used to ensure proper discrimination between companies.
+
+* result = recordset1 + recordset2: Merge 2 recordsets into one while preserving their order.
+
+* result = recordset1 | recordset2: Merge 2 recordsets into one ensuring that there are no duplicates in the result.
+
+* result = recordset1 & recordset2: Finds the records that are common to two recordsets.
+
+Summary table of the most useful python operators that can be used on recordsets:
+
+| Operator | Action performed |
+| -------- | ---------------- |
+| R1 + R2  | This returns a new recordset containing the records from R1 followed by the records from R2. This can generate duplicate records in the recordset. |
+| R1 – R2  | This returns a new recordset consisting of the records from R1, which are not in R2. The order is preserved. |
+| R1 & R2  | This returns a new recordset with all the records that belong to both R1 and R2 (intersection of recordsets). The order is not preserved here. |
+| R1 == R2 | True if both recordsets contain the same records. |
+| R1 <= R2, R1 in R2 | True if all records in R1 are also in R2. Both syntaxes are equivalent. |
+| R1 >= R2, R2 in R1 | True if all records in R2 are also in R1. Both syntaxes are equivalent. |
+| R1 != R2 | True if R1 and R2 do not contain the same records. |
+
+* There are also in-place operators +=, -=, &=, and |=, which modify the left-hand operand instead of creating a new recordset. These are very useful when updating a record's One2many or Many2many fields.
+
+* The sorted() method will sort the records in a recordset. Called without arguments, the_order attribute of the model will be used. Otherwise, a function can be passed to compute a comparison key in the same fashion as the Python built-in sorted(sequence, key) function. The reverse keyword argument is also supported.
 
 Sources
 -------
