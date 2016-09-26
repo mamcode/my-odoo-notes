@@ -46,14 +46,10 @@ the database.
 | ------- | -------- |
 | (0, 0, dict_val) | This creates a new record that will be related to the main record. |
 | (1, id, dict_val) | This updates the related record with the specified ID with the supplied values. |
-| (2, id) | This removes the record with the specified ID from the related
-records and deletes it from the database. |
-| (3, id) | This removes the record with the specified ID from the related
-records. The record is not deleted from the database. |
-| (4, id) | This adds an existing record with the supplied ID to the list of
-related records. |
-| (5, ) | This removes all the related records, equivalent to calling
-(3, id) for each related id. |
+| (2, id) | This removes the record with the specified ID from the related records and deletes it from the database. |
+| (3, id) | This removes the record with the specified ID from the related records. The record is not deleted from the database. |
+| (4, id) | This adds an existing record with the supplied ID to the list of related records. |
+| (5, ) | This removes all the related records, equivalent to calling (3, id) for each related id. |
 | (6, 0, id_list) | This creates a relation between the record being updated and the existing record, whose IDs are in the Python list id_list. |
 
 
