@@ -36,6 +36,26 @@ the database.
 
 * onchange methods are not called by create(), because they are called by the web client during the initial edition of the record. Some of these methods compute default values for fields related to a given field. When creating records by hand you have to do the work yourself, either by providing explicit values or by calling the onchange methods.
 
+* recordset.ensure_one(): Checks if the recordset contains exactly one record. This method will raise an exception if this is not the case and the processing will abort.
+
+* partner.child_ids |= contacts: The operator |= computes the union of te current contacts of the partner and the new contacts.
+
+* format when writing relational fields:
+| Tuple | Effect |
+|-------|--------|
+|(0, 0, dict_val) | This creates a new record that will be related to the main record.|
+|(1, id, dict_val) | This updates the related record with the specified ID with the supplied values.|
+|(2, id) | This removes the record with the specified ID from the related
+records and deletes it from the database.|
+|(3, id) | This removes the record with the specified ID from the related
+records. The record is not deleted from the database.|
+|(4, id) | This adds an existing record with the supplied ID to the list of
+related records.|
+|(5, ) | This removes all the related records, equivalent to calling
+(3, id) for each related id.|
+|(6, 0, id_list) | This creates a relation between the record being updated and the existing record, whose IDs are in the Python list id_list.|
+
+
 Sources
 -------
 
