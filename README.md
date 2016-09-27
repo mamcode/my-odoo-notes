@@ -98,6 +98,8 @@ def partners_with_email(self, partners):
 partners.filter('email')
 ```
 
+* recordset.mapped(path): The method mapped allows traverse the fields of the recordset. For example partner.mapped('child_ids.email') gets the email address of the contacts of the partner in a python list.
+
 Sources
 -------
 
