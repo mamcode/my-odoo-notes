@@ -1,6 +1,6 @@
 # My Odoo notes.
 
-* **self.env:** Stores an execution environment.
+* __self.env:__ Stores an execution environment.
 
 * self.env.cr: Is a database cursor.
 
