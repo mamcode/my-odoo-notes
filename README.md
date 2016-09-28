@@ -108,7 +108,11 @@ partners.filter('email')
 
 * model.fields_get(): This method is used by the web client to query for the fields of the model and their properties. It returns a Python dictionary mapping field names to a dictionary of field attributes, such as the "display" string or the "help" string.  This method can be extended (as create, write, read..) for modifying attributes of the fields of the model in the web client.
 
+* self.with_context(key=value): Returns a new version of the recordset attached to an extended context. https://www.odoo.com/documentation/9.0/reference/orm.html#openerp.models.Model.with_context
+
 Sources
 -------
 
 - [Book Odoo Development Cookbook.](https://www.packtpub.com/big-data-and-business-intelligence/odoo-development-cookbook)
+
+- [Odoo Documentation](https://www.odoo.com/documentation/9.0/)
