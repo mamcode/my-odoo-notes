@@ -118,6 +118,18 @@ partners.filter('email')
   - To search for records in the many2many_tags widget
   - To search for records in the CSV file import
 
+* About python logs: Available methods for this are (by increasing
+log level) debug, info, warning, error, and critical.  All these methods accept a message in which you can have % substitutions and additional arguments to be inserted in the message. You should not do the % substitution yourself; the logging module is smart enough to perform this operation only if the log has to be produced. If you are running with log level of INFO, then DEBUG logs will avoid doing the substitution.
+
+* _logger.exception(): This method can be used in an exception handler. The message will be logged with a level of ERROR and the stack trace is also printed in the application log.
+
+* You can control the logging level of the application from the command line with --log-level option.
+
+* To set the log level for a given logger, you can use --log-handler=prefix:level. In this case, prefix is a piece of the path of the logger name, and level is one of DEBUG, INFO, WARNING, ERROR, or CRITICAL. If you omit prefix, then you set the default level for all loggers. For instance, to set the logging level of my_module loggers to DEBUG and keep the default log level for the other addons, you can start Odoo like this:
+```python
+$ python odoo.py --log-handler=openerp.addons.my_module:DEBUG
+```
+
 Sources
 -------
 
