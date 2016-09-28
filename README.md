@@ -104,6 +104,10 @@ partners.filter('email')
 
 * recordset.mapped(path): The method mapped allows traverse the fields of the recordset. For example partner.mapped('child_ids.email') gets the email address of the contacts of the partner in a python list.
 
+* self.user_has_groups('xml_id_of_the_group'): Check whether the user of the environment belongs to the group with XML ID "xml_id_of_the_group".
+
+* model.fields_get(): This method is used by the web client to query for the fields of the model and their properties. It returns a Python dictionary mapping field names to a dictionary of field attributes, such as the "display" string or the "help" string.  This method can be extended (as create, write, read..) for modifying attributes of the fields of the model in the web client.
+
 Sources
 -------
 
