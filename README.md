@@ -110,6 +110,14 @@ partners.filter('email')
 
 * self.with_context(key=value): Returns a new version of the recordset attached to an extended context. https://www.odoo.com/documentation/9.0/reference/orm.html#openerp.models.Model.with_context
 
+* model.name_get(): This method is used to compute a representation of the record in various places, including in the widget used to display Many2one relations in the web client.
+
+* model._name_search(): This method allows to customize how records are searched in the Many2one widget and other various places. The default implementation of name_search only uses the attribute referred to by the _rec_name attribute of the model class. The default implementation of name_search() actually only calls the _name_search() method, which does the real job. It is also used in the following parts of Odoo:
+  - Proposals in the search widget
+  - When using the in operator on One2many and Many2many fields in the domain
+  - To search for records in the many2many_tags widget
+  - To search for records in the CSV file import
+
 Sources
 -------
 
