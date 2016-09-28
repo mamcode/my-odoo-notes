@@ -24,6 +24,8 @@ the database.
 
 * @api.model: Is a decorator used on methods. Is used on methods for which only the model is important, not the contents of the recordset.
 
+* @api.returns('self', lambda rec: rec.id): This decorator maps the returned value from the new API to the old API, which is expected by the RPC protocol. In this case, the RPC calls to create expect the database id for the new record to be created, so we pass the @api.returns decorator an anonymous function, which fetches the id from the new record returned by our implementation. It is also needed if you want to extend the copy() method. Do not forget it when extending these methods if the base implementation uses the old API or you will crash with hard to interpret messages.
+
 * UserError: Is a exception available in openerp.exceptions. A UserError will display an error message in the user interface.
 
 * ValidationError: Is a exception available in openerp.exceptions. Is raised when a python constraint on a field is not respected.
