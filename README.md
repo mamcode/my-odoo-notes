@@ -34,6 +34,8 @@ the database.
 
 * openerp.fields.Datetime.to_string(): Converts a python datetime.datetime object to the expected format.
 
+* openerp.fields.Date.from_string(date_str): Coverts a date formatted as a string to an datetime.date object.
+
 * onchange methods are not called by create(), because they are called by the web client during the initial edition of the record. Some of these methods compute default values for fields related to a given field. When creating records by hand you have to do the work yourself, either by providing explicit values or by calling the onchange methods.
 
 * recordset.ensure_one(): Checks if the recordset contains exactly one record. This method will raise an exception if this is not the case and the processing will abort.
