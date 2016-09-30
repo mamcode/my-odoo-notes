@@ -130,6 +130,16 @@ log level) debug, info, warning, error, and critical.  All these methods accept 
 $ python odoo.py --log-handler=openerp.addons.my_module:DEBUG
 ```
 
+* Odoo has a shell, you can use it to issue calls of methods.
+```python
+$ python odoo.py --database=database-name --log-level=error
+```
+
+* Commit the transaction before exiting of the shell:
+```python
+env.cr.commit()
+```
+
 Sources
 -------
 
