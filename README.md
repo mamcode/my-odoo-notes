@@ -42,7 +42,7 @@ the database.
 
 * recordset.ensure_one(): Checks if the recordset contains exactly one record. This method will raise an exception if this is not the case and the processing will abort.
 
-* partner.child_ids |= contacts: The operator |= computes the union of te current contacts of the partner and the new contacts.
+* partner.child_ids |= contacts: In this case the operator |= computes the union of the current contacts of the partner and the new contacts stored in the variable contacts.
 
 * format when writing relational fields:
 
