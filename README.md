@@ -126,17 +126,17 @@ log level) debug, info, warning, error, and critical.  All these methods accept 
 * You can control the logging level of the application from the command line with --log-level option.
 
 * To set the log level for a given logger, you can use --log-handler=prefix:level. In this case, prefix is a piece of the path of the logger name, and level is one of DEBUG, INFO, WARNING, ERROR, or CRITICAL. If you omit prefix, then you set the default level for all loggers. For instance, to set the logging level of my_module loggers to DEBUG and keep the default log level for the other addons, you can start Odoo like this:
-```python
+```shell
 $ python odoo.py --log-handler=openerp.addons.my_module:DEBUG
 ```
 
 * Odoo has a shell, you can use it to issue calls of methods.
-```python
-$ python odoo.py --database=database-name --log-level=error
+```shell
+$ python odoo.py shell --database=database-name --log-level=error
 ```
 
 * Commit the transaction before exiting of the shell:
-```python
+```shell
 env.cr.commit()
 ```
 
