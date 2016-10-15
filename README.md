@@ -140,6 +140,10 @@ $ python odoo.py shell --database=database-name --log-level=error
 env.cr.commit()
 ```
 
+* Be careful when you add new data files and new elements during your development process, because then the order in which you add those files and elements does not necessarily reflect the order they will be loaded in an empty database. Always check before deployment if your addon installs in an empty database.
+
+* If you need just a tiny bit more flexibility in the concrete action to be called, look into the server actions that return a window action in turn. If you need complete flexibility on what you present, look into the client actions (ir.actions.client) which allow you to have a completely custom user interface. But only do so as last resort as you lose a lot of Odoo's convenient helpers when using them.
+
 Sources
 -------
 
